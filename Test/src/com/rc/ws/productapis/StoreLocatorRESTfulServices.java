@@ -15,14 +15,14 @@ public interface StoreLocatorRESTfulServices extends RESTfulBaseService {
 	@GET
 	@Path(Constants.STORE_LOCATOR_BY_LOCATION)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO searchStoreByLocation(@QueryParam("city") String city
+	public String searchStoreByLocation(@QueryParam("city") String city
 											, @QueryParam("siteLevelStoreSearch") String siteLevelStoreSearch
 											, @QueryParam("radius") String radius);
 
 	@GET
 	@Path(Constants.STORE_LOCATOR_BY_ZIPCODE)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO searchStoreByZipcode(@QueryParam("latitude") String latitude
+	public String searchStoreByZipcode(@QueryParam("latitude") String latitude
 											, @QueryParam("longitude") String longitude
 											, @QueryParam("maxItems") String maxItems
 											, @QueryParam("siteLevelStoreSearch") String siteLevelStoreSearch

@@ -15,20 +15,25 @@ public interface CategoryBasedRESTfulServices extends RESTfulBaseService {
 	@GET
 	@Path(Constants.GET_TOP_CATEGORYIES+"/{topCategory}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getTopCategories(@PathParam("topCategory") String topCategory);
+	public String getTopCategories(@PathParam("topCategory") String topCategory);
 
 	
 	@GET
 	@Path(Constants.BY_PARENT_CATEGORY+"/{categoryId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getSubCategories(@PathParam("categoryId") String categoryId);
+	public String getSubCategories(@PathParam("categoryId") String categoryId);
 	
 	
 	
 	@GET
 	@Path(Constants.GET_PRODUCT_BY_CATEGORY_TYPE+"/{categoryType}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getCategoriesybyType(@PathParam("categoryType") String categoryType);
+	public String getCategoriesybyType(@PathParam("categoryType") String categoryType);
 	
+	
+	@GET
+	@Path(Constants.GET_CATEGORY_BY_UID+"/{uid}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getCategoryByUID(@PathParam("uid") String uid);
 	
 }

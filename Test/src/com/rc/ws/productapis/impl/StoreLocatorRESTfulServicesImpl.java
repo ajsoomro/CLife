@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rc.common.constants.Constants;
 import com.rc.common.exception.RCSystemException;
 import com.rc.common.util.CommonUtility;
+import com.rc.common.util.ParserUtility;
 import com.rc.delegate.RCDelegate;
 import com.rc.dto.pojo.ResponseDTO;
 import com.rc.ws.base.impl.RESTFulBaseServiceImpl;
@@ -27,7 +28,7 @@ public class StoreLocatorRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     
     public final Logger logger = Logger.getLogger(StoreLocatorRESTfulServicesImpl.class);
 
-	public ResponseDTO searchStoreByLocation(String city, String siteLevelStoreSearch, String radius) {
+	public String searchStoreByLocation(String city, String siteLevelStoreSearch, String radius) {
 
 		String METHOD_NAME = CLASS_NAME+"byLocation()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -64,7 +65,7 @@ public class StoreLocatorRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 
     public void setDelegate(RCDelegate delegate) {
@@ -75,7 +76,7 @@ public class StoreLocatorRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
 		return mDelegate;
 	}
 
-	public ResponseDTO searchStoreByZipcode(String latitude, String longitude, String maxItems,
+	public String searchStoreByZipcode(String latitude, String longitude, String maxItems,
 			String siteLevelStoreSearch, String responseFormat) {
 
 		String METHOD_NAME = CLASS_NAME+"searchStoreByLocation()";
@@ -115,6 +116,6 @@ public class StoreLocatorRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 }

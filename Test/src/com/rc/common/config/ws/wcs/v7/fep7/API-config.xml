@@ -18,6 +18,15 @@
 	        <param name="https" value="true" />
         </api>
         
+        <api name="getCategoryByUID">
+	        <param name="URI" value="/categoryview/byId" />
+	        <param name="requestMethod" value="GET" />
+	        <param name="parameters" value="/[uid]" />
+	        <param name="consumes" value="URL" /> 	<!-- Default consumes attributes from URL. can have possible values like XML,JSON -->
+	        <param name="produces" value="application/json" /> 	<!-- Can have possible values like XML,HTML,plain_text etc.. -->
+	        <param name="https" value="true" />
+        </api>
+        
         <!-- 11/25 -->
         <api name="getProductByCategoryType">
 	        <param name="URI" value="/categoryview" />
@@ -160,6 +169,26 @@
     		<param name="produces" value="application/json" />
     		<param name="https" value="true" />
     	</api>   
+    </api-category>
+    
+    <api-category name="checkoutProfileAPIs">
+    	<api name="getCheckoutProfile">
+    		<param name="URI" value="/person" />
+    		<param name="requestMethod" value="GET" />
+    		<param name="parameters" value="/@self/checkoutProfile" />
+    		<param name="consumes" value="application/json" />
+    		<param name="https" value="true" />
+    	</api>
+    </api-category>
+    
+    <api-category name="promotionAPIs">
+    	<api name="assignPromoCode">
+    		<param name="URI" value="/cart" />
+    		<param name="requestMethod" value="GET" />
+    		<param name="parameters" value="/@self/assigned_promotion_code" />
+    		<param name="consumes" value="application/json" />
+    		<param name="https" value="true" />
+    	</api>
     </api-category>
     
     

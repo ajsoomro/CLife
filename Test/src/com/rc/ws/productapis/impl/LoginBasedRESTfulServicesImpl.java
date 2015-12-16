@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rc.common.constants.Constants;
 import com.rc.common.exception.RCSystemException;
 import com.rc.common.util.CommonUtility;
+import com.rc.common.util.ParserUtility;
 import com.rc.delegate.RCDelegate;
 import com.rc.dto.pojo.ResponseDTO;
 import com.rc.ws.base.impl.RESTFulBaseServiceImpl;
@@ -28,7 +29,7 @@ public class LoginBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl implem
     public final Logger logger = Logger.getLogger(LoginBasedRESTfulServicesImpl.class);
     
     //Guest Login
-	public ResponseDTO getGuestLoginToken() {
+	public String getGuestLoginToken() {
 
 		String METHOD_NAME = CLASS_NAME+"getGuestLoginToken()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -59,11 +60,11 @@ public class LoginBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl implem
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+		return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 
     //User Login
-	public ResponseDTO getUserLoginToken(String json) {
+	public String getUserLoginToken(String json) {
 		
 		String METHOD_NAME = CLASS_NAME+"getUserLoginToken()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -97,7 +98,7 @@ public class LoginBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl implem
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 	
     public void setDelegate(RCDelegate delegate) {

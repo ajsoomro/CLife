@@ -17,12 +17,12 @@ public interface LoginBasedRESTfulServices extends RESTfulBaseService {
 	@POST
 	@Path(Constants.GUEST_LOGIN)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getGuestLoginToken();
+	public String getGuestLoginToken();
 	
 	@POST
 	@Path(Constants.USER_LOGIN)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getUserLoginToken(String json);
+	public String getUserLoginToken(String json);
 	/*public ResponseDTO getUserLoginToken(@QueryParam("logonId")String logonId, @QueryParam("logonPassword") String logonPassword);*/
 }

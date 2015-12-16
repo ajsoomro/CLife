@@ -84,6 +84,8 @@ public class Constants {
 	public static final String GET_TOP_CATEGORYIES = "getTopCategories";
 	public static final String BY_PARENT_CATEGORY = "byParentCategory";
 	public static final String GET_PRODUCT_BY_CATEGORY_TYPE = "getProductByCategoryType";
+	public static final String GET_CATEGORY_BY_UID = "getCategoryByUID";
+
 
 	/*
 	 * Product based APIs
@@ -117,6 +119,18 @@ public class Constants {
 	 */
 	public static final String GET_KEYWORD_SUGGESTION = "getKeywordSuggestion";
 
+	
+	/*
+	 * Checkout Profile based APIs
+	 */
+	public static final String GET_CHECKOUT_PROFILE = "getCheckoutProfile";
+	
+	
+	/*
+	 * Promotion Code Based API
+	 */
+	public static final String ASSIGN_PROMO_CODE = "assignPromoCode";
+	
 
 	
 	/*
@@ -150,10 +164,14 @@ public class Constants {
 	public static final String ORDER_ITEM_ID = "orderItemId";
 	
 	public static final String CATEGORY_TYPE = "categoryType";
+	
+	public static final String CHECKOUT_PROFILE = "checkoutProfile";
 
 	public static final String KEYWORD_SUGGESTION = "keywordSuggestion";
 
 	public static final String ASSIGNED_PROMOTION_CODE = "assignedPromotionCode";
+	
+	public static final String UID = "uid";
 
 	
 

@@ -32,4 +32,8 @@
 	<bean id="categoryBasedRESTfulServices" class="com.rc.ws.productapis.impl.CategoryBasedRESTfulServicesImpl"/>
 	<bean id="loginBasedRESTfulServices" class="com.rc.ws.productapis.impl.LoginBasedRESTfulServicesImpl"/>	
     <bean id="cartBasedRESTfulServices" class="com.rc.ws.productapis.impl.CartBasedRESTfulServicesImpl"/>
+    <bean id="checkoutBasedRESTfulServices" class="com.rc.ws.productapis.impl.CheckoutBasedRESTfulServicesImpl"/>
+    <bean id="promotionBasedRESTfulServices" class="com.rc.ws.productapis.impl.PromotionBasedRESTfulServicesImpl"/> 
+    
+    
 </beans>

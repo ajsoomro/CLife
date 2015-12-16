@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rc.common.constants.Constants;
 import com.rc.common.exception.RCSystemException;
 import com.rc.common.util.CommonUtility;
+import com.rc.common.util.ParserUtility;
 import com.rc.delegate.RCDelegate;
 import com.rc.dto.pojo.ResponseDTO;
 import com.rc.ws.base.impl.RESTFulBaseServiceImpl;
@@ -27,7 +28,7 @@ public class ProductBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     
     public final Logger logger = Logger.getLogger(ProductBasedRESTfulServicesImpl.class);
 
-	public ResponseDTO getProductByID(String productId) {
+	public String getProductByID(String productId) {
 
 		String METHOD_NAME = CLASS_NAME+"getProductByID()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -62,7 +63,7 @@ public class ProductBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+		return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 
     public void setDelegate(RCDelegate delegate) {
@@ -73,7 +74,7 @@ public class ProductBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
 		return mDelegate;
 	}
 
-	public ResponseDTO getSearchProducts(String productName) {
+	public String getSearchProducts(String productName) {
 
 		String METHOD_NAME = CLASS_NAME+"getProductByID()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -108,10 +109,10 @@ public class ProductBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 
-	public ResponseDTO getProductbyCategory(String categoryId) {
+	public String getProductbyCategory(String categoryId) {
 
 		String METHOD_NAME = CLASS_NAME+"getProductByID()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -146,6 +147,6 @@ public class ProductBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impl
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 	}
 }

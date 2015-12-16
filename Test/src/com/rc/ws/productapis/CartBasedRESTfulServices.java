@@ -19,7 +19,7 @@ public interface CartBasedRESTfulServices extends RESTfulBaseService {
 	@Path(Constants.ADD_TO_CART)
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Produces(MediaType.APPLICATION_JSON)
-	public ResponseDTO getAddToCartDetail(String json
+	public String getAddToCartDetail(String json
 										  , @HeaderParam("userId") String userId
 										  , @HeaderParam("personalizationID") String personalizationID
 										  , @HeaderParam("WCTrustedToken") String WCTrustedToken

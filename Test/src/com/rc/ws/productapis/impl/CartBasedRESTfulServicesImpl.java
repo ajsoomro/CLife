@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.rc.common.constants.Constants;
 import com.rc.common.exception.RCSystemException;
 import com.rc.common.util.CommonUtility;
+import com.rc.common.util.ParserUtility;
 import com.rc.delegate.RCDelegate;
 import com.rc.dto.pojo.ResponseDTO;
 import com.rc.ws.base.impl.RESTFulBaseServiceImpl;
@@ -28,7 +29,7 @@ public class CartBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impleme
     public final Logger logger = Logger.getLogger(CartBasedRESTfulServicesImpl.class);
     
     //Add to Cart
-	public ResponseDTO getAddToCartDetail(String json, String userId, String personalizationID, String WCTrustedToken, String WCToken) {
+	public String getAddToCartDetail(String json, String userId, String personalizationID, String WCTrustedToken, String WCToken) {
 		
 		String METHOD_NAME = CLASS_NAME+"getAddToCartDetail()";
 		logger.info(METHOD_NAME+" Enter method.");
@@ -70,7 +71,7 @@ public class CartBasedRESTfulServicesImpl extends RESTFulBaseServiceImpl impleme
     	}
     	
     	logger.info(METHOD_NAME+" Exit method.");
-		return responseDTO;
+    	return ParserUtility.JavaToJson(responseDTO.getBaseConverterDTO());
 
 	}
 	

@@ -43,6 +43,14 @@ public class ConverterFactory {
 		converterMap.put("wcs/v7/fep7/loginidentity","com.rc.dto.wcs.v7.fep7.LoginViewJSON");
 		converterMap.put("wcs/v7/fep7/cart","com.rc.dto.wcs.v7.fep7.CartViewJSON");
 
+		converterMap.put("wcs/v7/fep7/person","com.rc.dto.wcs.v7.fep7.CheckoutViewJSON");
+		converterMap.put("wcs/v7/fep7/categoryview/byId","com.rc.dto.wcs.v7.fep7.CategoryViewJSON"); //getCategoryByUID
+		
+		converterMap.put("wcs/v7/fep7/cart","com.rc.dto.wcs.v7.fep7.PromotionCodeJSON"); //assignPromoCode
+
+
+
+		
 	}
 
 	/**
