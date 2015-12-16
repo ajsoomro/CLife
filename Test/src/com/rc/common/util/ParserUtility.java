@@ -96,7 +96,7 @@ public class ParserUtility {
 	 * @return
 	 */
 	
-	public static String JavaToJson(Object obj) throws IllegalArgumentException{
+	public static String JavaToJson(Object obj){
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
 		String s = gson.toJson(obj);
